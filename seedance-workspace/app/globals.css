@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #131311;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(236, 232, 220, 0.035) 1px, transparent 0);
+  background-size: 22px 22px;
+  color: #ECE8DC;
+}
+
+* {
+  border-color: #34342C;
+}
+
+::selection {
+  background-color: #E0A23D;
+  color: #131311;
+}
+
+/* Scrollbars tuned to the dark canvas */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #34342C;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #48473C;
+}
+
+/* Sprocket-hole rail: a restrained nod to a filmstrip edge, used on job cards */
+.sprocket-rail {
+  background-image: radial-gradient(circle, #131311 2.5px, transparent 2.6px);
+  background-size: 16px 100%;
+  background-repeat: repeat-x;
+  background-position: 4px center;
+  height: 10px;
+}
+
+/* Tally light: pulses while a job is rendering, holds steady once resolved */
+.tally-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.tally-dot[data-state='waiting'],
+.tally-dot[data-state='queuing'] {
+  background-color: #65625A;
+}
+.tally-dot[data-state='generating'] {
+  background-color: #E0A23D;
+  animation: tally-pulse 1.4s ease-in-out infinite;
+}
+.tally-dot[data-state='success'] {
+  background-color: #6FA76B;
+}
+.tally-dot[data-state='fail'] {
+  background-color: #C1543C;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes tally-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(224, 162, 63, 0.45); }
+    50% { opacity: 0.55; box-shadow: 0 0 0 4px rgba(224, 162, 63, 0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tally-dot[data-state='generating'] { opacity: 0.85; }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #E0A23D;
+  outline-offset: 2px;
+}

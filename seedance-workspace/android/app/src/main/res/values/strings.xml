@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seedance Workspace</string>
+    <string name="title_activity_main">Seedance Workspace</string>
+    <string name="package_name">com.seedanceworkspace.app</string>
+    <string name="custom_url_scheme">com.seedanceworkspace.app</string>
+</resources>
