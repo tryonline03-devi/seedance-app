@@ -13,7 +13,7 @@ const config: CapacitorConfig = {
     // TODO: replace with your real deployed URL (e.g. Vercel) before
     // building the APK. Must be HTTPS. Run `npx cap sync android` again
     // after changing this.
-    url: 'https://REPLACE-WITH-YOUR-DEPLOYED-URL.vercel.app',
+    url: 'https://seedance-app-nu.vercel.app',
     androidScheme: 'https'
   }
 };
